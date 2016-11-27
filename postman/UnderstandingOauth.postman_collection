@@ -1,0 +1,250 @@
+{
+	"id": "bc8e0cfd-5ef6-b324-613f-a9f0cc432b9d",
+	"name": "UnderstandingOauth",
+	"description": "",
+	"order": [
+		"446961bc-7573-1536-43f4-6d337e1a6c7f",
+		"d588b723-1661-caad-e342-7ea161fcfb31",
+		"496786a1-9b73-0cbb-c099-98080b09fd54",
+		"f4c30c99-c986-1a69-8bd9-b16234a3b98b",
+		"0db58244-4d80-0816-f2bb-5cf83034a237"
+	],
+	"folders": [],
+	"timestamp": 1466697602096,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "0db58244-4d80-0816-f2bb-5cf83034a237",
+			"headers": "Authorization: Bearer amDViGeUar95mKvkId6oCHkaHB6u1NeJ5NpvNrOG\n",
+			"url": "http://mybookshelf.app/api/books",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "title",
+					"value": "Test",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "isbn",
+					"value": "9999",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "author_id",
+					"value": "1",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1467418439585,
+			"name": "Create Book",
+			"description": "",
+			"collectionId": "bc8e0cfd-5ef6-b324-613f-a9f0cc432b9d",
+			"responses": []
+		},
+		{
+			"id": "446961bc-7573-1536-43f4-6d337e1a6c7f",
+			"headers": "",
+			"url": "http://mybookshelf.app/oauth/authorize?client_id=wormrate&redirect_uri=http://wormrate.app/mybookshelf&response_type=code",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "code",
+					"value": "NgJgxxJSXGWsdZuMqxKdj0p1w5hTBMJSBbLxL2nx",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "authorization_code",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "testid",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "testsecret",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "redirect_uri",
+					"value": "http://wormly.app/mybookshelf",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1467304519176,
+			"name": "OAuth Authorization Screen",
+			"description": "",
+			"collectionId": "bc8e0cfd-5ef6-b324-613f-a9f0cc432b9d",
+			"responses": []
+		},
+		{
+			"id": "496786a1-9b73-0cbb-c099-98080b09fd54",
+			"headers": "",
+			"url": "http://mybookshelf.app/oauth/access_token",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "refresh_token",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "refresh_token",
+					"value": "CIdMI1cdXivlIVyhfc11LZOBKhcwuSV6KCaVtYIH",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "wormrate",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "wormsecret",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1479000487821,
+			"name": "Refresh Token",
+			"description": "",
+			"collectionId": "bc8e0cfd-5ef6-b324-613f-a9f0cc432b9d",
+			"responses": []
+		},
+		{
+			"id": "d588b723-1661-caad-e342-7ea161fcfb31",
+			"headers": "",
+			"url": "http://mybookshelf.app/oauth/access_token",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "code",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "authorization_code",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "wormrate",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "wormsecret",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "redirect_uri",
+					"value": "http://wormrate.app/mybookshelf",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1479000272366,
+			"name": "Activate Authorization Code to get First Access Token",
+			"description": "",
+			"collectionId": "bc8e0cfd-5ef6-b324-613f-a9f0cc432b9d",
+			"responses": []
+		},
+		{
+			"id": "f4c30c99-c986-1a69-8bd9-b16234a3b98b",
+			"headers": "Authorization: Bearer 5Eh6kT0MWstxwBKpofhqMpAQ78RsA9OLtN5eptTV\n",
+			"url": "http://mybookshelf.app/api/books",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "code",
+					"value": "NgJgxxJSXGWsdZuMqxKdj0p1w5hTBMJSBbLxL2nx",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "authorization_code",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "testid",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "testsecret",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "redirect_uri",
+					"value": "http://wormly.app/mybookshelf",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1479000280070,
+			"name": "List Books",
+			"description": "",
+			"collectionId": "bc8e0cfd-5ef6-b324-613f-a9f0cc432b9d",
+			"responses": []
+		}
+	]
+}
